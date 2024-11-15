@@ -8,6 +8,9 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
+  <div class="container">
+    <div v-for="i in 50" :key="i" class="snowflake"></div>
+  </div>
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
