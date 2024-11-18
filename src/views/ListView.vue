@@ -12,6 +12,7 @@
             :back-ground-color="gift.backGroundColor"
             :band-color="gift.bandColor"
             :pattern="gift.pattern"
+            :toggle-play="togglePlay"
         />
     </div>
 </template>
@@ -31,6 +32,7 @@
     import pastryBrushImage from '@/assets/img/pastry-brush.png'
     import perforatedBakingSheetImage from '@/assets/img/perforated-baking-sheet.png'
     import switchJoyConImage from '@/assets/img/switch-joy-con.png'
+    import AudioPlayer from '@/components/AudioPlayer.vue'
     import GiftComponent from '@/components/GiftComponent.vue'
     import { onMounted, ref } from 'vue'
 
@@ -41,13 +43,22 @@
         rowEnd: number
         text: string
         img?: string
-        link?: string
         backGroundColor?: string
         bandColor?: string
         pattern?: 'cross-ribbon' | 'polka-dots' | 'diagonal-ribbons' | 'diagonal-ribbons-reversed'
     }
 
+    const props = defineProps<{
+        audioPlayerRef?: InstanceType<typeof AudioPlayer>
+    }>()
+
     const giftList = ref<Gift[]>([])
+
+    const togglePlay = () => {
+        if (props.audioPlayerRef) {
+            props.audioPlayerRef.togglePlay()
+        }
+    }
 
     onMounted(() => {
         giftList.value = [

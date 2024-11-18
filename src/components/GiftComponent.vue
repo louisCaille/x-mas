@@ -48,7 +48,7 @@
 <script setup lang="ts">
     import { ref } from 'vue'
 
-    withDefaults(
+    const props = withDefaults(
         defineProps<{
             columnStart: number
             columnEnd: number
@@ -59,6 +59,7 @@
             backGroundColor?: string
             bandColor?: string
             pattern?: 'cross-ribbon' | 'polka-dots' | 'diagonal-ribbons' | 'diagonal-ribbons-reversed'
+            togglePlay: () => void
         }>(),
         {
             backGroundColor: 'red',
@@ -75,6 +76,7 @@
         setTimeout(() => {
             isFlipping.value = false
         }, 500)
+        props.togglePlay()
     }
 
     function adjustBackgroundOpacity(color: string, opacity: number): string {
