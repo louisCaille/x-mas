@@ -49,7 +49,7 @@
     }
 
     const props = defineProps<{
-        audioPlayerRef?: InstanceType<typeof AudioPlayer>
+        audioPlayerRef?: InstanceType<typeof AudioPlayer> | null
     }>()
 
     const giftList = ref<Gift[]>([])

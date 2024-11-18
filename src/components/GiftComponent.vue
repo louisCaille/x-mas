@@ -9,7 +9,7 @@
     >
         <div
             :class="[
-                'flex align-items-center justify-content-center border-round-sm font-bold h-full cursor-pointer',
+                'flex border-round-sm font-bold h-full cursor-pointer overflow-hidden',
                 { shake: !isFlipping && !showContent },
                 { gift: !showContent },
                 { 'flipright animation-duration-500': isFlipping }
@@ -17,10 +17,6 @@
             :style="{ backgroundColor: showContent ? adjustBackgroundOpacity(backGroundColor, 0.75) : backGroundColor }"
             @click="handleClick"
         >
-            <p v-if="showContent">
-                <img v-if="img" class="image" :src="img" alt="gift image" />
-                <span>{{ text }}</span>
-            </p>
             <div
                 v-if="!showContent && pattern === 'cross-ribbon'"
                 class="cross-ribbon"
@@ -41,6 +37,10 @@
                 class="diagonal-ribbons-reversed"
                 :style="{ '--band-color': bandColor }"
             />
+            <div v-if="showContent" class="flex flex-column align-items-center justify-content-center p-3 content">
+                <img v-if="img" class="image" :src="img" alt="gift image" />
+                <span class="text-center">{{ text }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -76,7 +76,7 @@
         setTimeout(() => {
             isFlipping.value = false
         }, 500)
-        props.togglePlay()
+        if (showContent.value) props.togglePlay()
     }
 
     function adjustBackgroundOpacity(color: string, opacity: number): string {
@@ -111,6 +111,8 @@
     .gift {
         position: relative;
         z-index: 10;
+        width: 100%;
+        height: 100%;
     }
 
     .cross-ribbon::before,
@@ -169,8 +171,15 @@
         );
     }
 
+    .content {
+        color: #ffffff;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
     .image {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: auto;
     }
 </style>
