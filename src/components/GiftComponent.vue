@@ -38,8 +38,10 @@
                 :style="{ '--band-color': bandColor }"
             />
             <div v-if="showContent" class="flex flex-column align-items-center justify-content-center p-3 content">
-                <img v-if="img" class="image" :src="img" alt="gift image" />
-                <span class="text-center">{{ text }}</span>
+                <div class="frame">
+                    <img v-if="img" class="frame-image" :src="img" alt="gift image" />
+                    <div class="frame-text">{{ text }}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -172,14 +174,41 @@
     }
 
     .content {
-        color: #ffffff;
         width: 100%;
-        height: 100%;
+        height: auto;
         overflow: hidden;
     }
 
-    .image {
-        width: 80px;
-        height: auto;
+    .frame {
+        background-color: #fbfbf4;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border: 10px solid #d4af37;
+        border-bottom: 50px solid #d4af37;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .frame-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .frame-text {
+        position: absolute;
+        height: 50px;
+        bottom: -50px;
+        width: 100%;
+        color: #fbfbf4;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }
 </style>

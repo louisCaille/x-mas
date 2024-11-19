@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import AudioPlayer from '@/components/AudioPlayer.vue'
     import SnowflakeComponent from '@/components/SnowflakeComponent.vue'
+    import HeaderView from '@/views/HeaderView.vue'
     import ListView from '@/views/ListView.vue'
     import { ref } from 'vue'
 
@@ -9,6 +10,7 @@
 
 <template>
     <SnowflakeComponent />
+    <HeaderView />
     <ListView :audio-player-ref="audioPlayerRef" />
     <AudioPlayer ref="audioPlayerRef" />
 </template>

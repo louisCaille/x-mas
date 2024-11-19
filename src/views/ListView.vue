@@ -26,9 +26,9 @@
     }
 </style>
 <script setup lang="ts">
+    import astroBotPs5Image from '@/assets/img/astro-bot-ps5.png'
     import cookingHornImage from '@/assets/img/cooking-horn.png'
     import monsterVolumeEightImage from '@/assets/img/monster-volume-eight.png'
-    import monsterVolumeNineImage from '@/assets/img/monster-volume-nine.png'
     import pastryBrushImage from '@/assets/img/pastry-brush.png'
     import perforatedBakingSheetImage from '@/assets/img/perforated-baking-sheet.png'
     import switchJoyConImage from '@/assets/img/switch-joy-con.png'
@@ -67,7 +67,7 @@
                 columnEnd: 2,
                 rowStart: 1,
                 rowEnd: 2,
-                text: 'Monster Tome 8',
+                text: 'Monster Tome 8 & 9',
                 img: monsterVolumeEightImage,
                 backGroundColor: '#42ABCE',
                 bandColor: '#E84049',
@@ -78,8 +78,8 @@
                 columnEnd: 3,
                 rowStart: 1,
                 rowEnd: 2,
-                text: 'Monster Tome 9',
-                img: monsterVolumeNineImage,
+                text: 'Astro Bot PS5',
+                img: astroBotPs5Image,
                 backGroundColor: '#EAD39E',
                 bandColor: '#EDBF29',
                 pattern: 'polka-dots'
