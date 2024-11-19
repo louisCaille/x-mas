@@ -2,7 +2,6 @@
 
 <template>
     <div class="header">
-        <img class="header-img" src="@/assets/img/christmas-louis.png" alt="louis" />
         <div class="neon-text">
             <span>M</span><span class="mr-3">A</span><span>L</span><span>I</span><span>S</span><span>T</span
             ><span class="mr-3">E</span><span>D</span><span class="mr-3">E</span><span>N</span><span>O</span
@@ -19,13 +18,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .header-img {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 10px;
+        margin-bottom: 32px;
     }
 
     .neon-text {
