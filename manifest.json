@@ -1,0 +1,9 @@
+{
+    "name": "Liste de Noël",
+    "short_name": "Liste",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1B6A3D",
+    "theme_color": "#1B6A3D",
+    "icons": []
+}
