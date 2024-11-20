@@ -1,257 +1,60 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import NeonText from '@/components/NeonText.vue'
+</script>
 
 <template>
     <div class="header">
-        <div class="neon-text">
-            <span>M</span><span class="mr-3">A</span><span>L</span><span>I</span><span>S</span><span>T</span
-            ><span class="mr-3">E</span><span>D</span><span class="mr-3">E</span><span>N</span><span>O</span
-            ><span>Ë</span><span>L</span>
+        <div class="image-container">
+            <img class="dog" src="@/assets/img/vicky.png" alt="dog" />
+            <img class="christmas-tree" src="@/assets/img/christmas-tree.svg" alt="christmas tree" />
+            <NeonText class="text" text="MA LISTE DE NOËL" />
+            <img class="cat" src="@/assets/img/mew.png" alt="cat" />
         </div>
     </div>
 </template>
 
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-
     .header {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 
-    .neon-text {
-        display: flex;
-        font-size: 34px;
-        font-weight: bold;
-        color: #ffffff;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        font-family: 'Luckiest Guy', cursive;
-
-        span {
-            margin-right: 2px;
-        }
+    .dog {
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        width: 120px;
+        height: auto;
     }
 
-    .neon-text span:nth-child(1) {
-        animation: neon1 1.5s infinite alternate;
-        color: #8934b8;
+    .cat {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        width: 100px;
+        height: auto;
     }
 
-    .neon-text span:nth-child(2) {
-        animation: neon2 1.5s infinite alternate;
-        color: #0a53de;
+    .image-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
     }
 
-    .neon-text span:nth-child(3) {
-        animation: neon3 1.5s infinite alternate;
-        color: #24d024;
+    .christmas-tree {
+        width: 100%;
+        height: auto;
     }
 
-    .neon-text span:nth-child(4) {
-        animation: neon4 1.5s infinite alternate;
-        color: #fbf21a;
-    }
-
-    .neon-text span:nth-child(5) {
-        animation: neon5 1.5s infinite alternate;
-        color: #fb6f24;
-    }
-
-    .neon-text span:nth-child(6) {
-        animation: neon6 1.5s infinite alternate;
-        color: #ea0d0d;
-    }
-
-    .neon-text span:nth-child(7) {
-        animation: neon1 1.5s infinite alternate;
-        color: #8934b8;
-    }
-
-    .neon-text span:nth-child(8) {
-        animation: neon2 1.5s infinite alternate;
-        color: #0a53de;
-    }
-
-    .neon-text span:nth-child(9) {
-        animation: neon3 1.5s infinite alternate;
-        color: #24d024;
-    }
-
-    .neon-text span:nth-child(10) {
-        animation: neon4 1.5s infinite alternate;
-        color: #fbf21a;
-    }
-
-    .neon-text span:nth-child(11) {
-        animation: neon5 1.5s infinite alternate;
-        color: #fb6f24;
-    }
-
-    .neon-text span:nth-child(12) {
-        animation: neon6 1.5s infinite alternate;
-        color: #ea0d0d;
-    }
-
-    .neon-text span:nth-child(13) {
-        animation: neon1 1.5s infinite alternate;
-        color: #8934b8;
-    }
-
-    @keyframes neon1 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #8934b8,
-                0 0 80px #8934b8,
-                0 0 90px #8934b8,
-                0 0 100px #8934b8,
-                0 0 150px #8934b8;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
-    }
-
-    @keyframes neon2 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #0a53de,
-                0 0 80px #0a53de,
-                0 0 90px #0a53de,
-                0 0 100px #0a53de,
-                0 0 150px #0a53de;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
-    }
-
-    @keyframes neon3 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #24d024,
-                0 0 80px #24d024,
-                0 0 90px #24d024,
-                0 0 100px #24d024,
-                0 0 150px #24d024;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
-    }
-
-    @keyframes neon4 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #fbf21a,
-                0 0 80px #fbf21a,
-                0 0 90px #fbf21a,
-                0 0 100px #fbf21a,
-                0 0 150px #fbf21a;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
-    }
-
-    @keyframes neon5 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #fb6f24,
-                0 0 80px #fb6f24,
-                0 0 90px #fb6f24,
-                0 0 100px #fb6f24,
-                0 0 150px #fb6f24;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
-    }
-
-    @keyframes neon6 {
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #ea0d0d,
-                0 0 80px #ea0d0d,
-                0 0 90px #ea0d0d,
-                0 0 100px #ea0d0d,
-                0 0 150px #ea0d0d;
-        }
-
-        20%,
-        24%,
-        55% {
-            text-shadow: none;
-        }
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 30px;
     }
 </style>

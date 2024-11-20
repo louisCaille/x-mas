@@ -40,7 +40,12 @@
             <div v-if="showContent" class="flex flex-column align-items-center justify-content-center p-3 content">
                 <div class="frame">
                     <img v-if="img" class="frame-image" :src="img" alt="gift image" />
-                    <div class="frame-text">{{ text }}</div>
+                    <div class="frame-text">
+                        <span>{{ text }}</span>
+                    </div>
+                    <div v-if="link" class="link-bubble" @click.stop="openLink">
+                        <img src="@/assets/img/christmas-link.png" alt="link icon" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,6 +63,7 @@
             rowEnd: number
             text: string
             img?: string
+            link?: string
             backGroundColor?: string
             bandColor?: string
             pattern?: 'cross-ribbon' | 'polka-dots' | 'diagonal-ribbons' | 'diagonal-ribbons-reversed'
@@ -79,6 +85,12 @@
             isFlipping.value = false
         }, 500)
         if (showContent.value) props.togglePlay()
+    }
+
+    const openLink = () => {
+        if (props.link) {
+            window.open(props.link, '_blank')
+        }
     }
 
     function adjustBackgroundOpacity(color: string, opacity: number): string {
@@ -203,12 +215,38 @@
         height: 50px;
         bottom: -50px;
         width: 100%;
-        color: #fbfbf4;
-        font-size: 14px;
-        font-weight: bold;
         display: flex;
         justify-content: center;
-        text-align: center;
         align-items: center;
+        span {
+            color: #fbfbf4;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .link-bubble {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 5px;
+        border: 2px solid #000;
+    }
+
+    .link-bubble img {
+        width: 100%;
+        height: 100%;
     }
 </style>
