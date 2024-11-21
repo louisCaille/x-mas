@@ -10,7 +10,6 @@
         <div
             :class="[
                 'flex border-round-sm font-bold h-full cursor-pointer overflow-hidden',
-                { shake: !isFlipping && !showContent },
                 { gift: !showContent },
                 { 'flipright animation-duration-500': isFlipping }
             ]"
@@ -75,16 +74,24 @@
             pattern: 'cross-ribbon'
         }
     )
+
     const showContent = ref(false)
     const isFlipping = ref(false)
 
     const handleClick = () => {
-        showContent.value = !showContent.value
-        isFlipping.value = true
-        setTimeout(() => {
-            isFlipping.value = false
-        }, 500)
-        if (showContent.value) props.togglePlay()
+        const giftElement = document.querySelector('.gift')
+        if (giftElement) {
+            giftElement.classList.add('shake')
+            setTimeout(() => {
+                giftElement.classList.remove('shake')
+                showContent.value = !showContent.value
+                isFlipping.value = true
+                setTimeout(() => {
+                    isFlipping.value = false
+                }, 500)
+                if (showContent.value) props.togglePlay()
+            }, 500) // Duration of the shake animation
+        }
     }
 
     const openLink = () => {
@@ -118,7 +125,7 @@
         }
     }
 
-    .shake:hover {
+    .shake {
         animation: shake 0.5s;
     }
 
