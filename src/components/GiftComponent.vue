@@ -8,6 +8,7 @@
         }"
     >
         <div
+            :id="id"
             :class="[
                 'flex border-round-sm font-bold h-full cursor-pointer overflow-hidden',
                 { gift: !showContent },
@@ -52,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { onMounted, ref } from 'vue'
 
     const props = withDefaults(
         defineProps<{
@@ -75,22 +76,30 @@
         }
     )
 
+    const id = ref('')
     const showContent = ref(false)
     const isFlipping = ref(false)
 
+    onMounted(() => {
+        id.value = Math.random().toString(36).substring(7)
+    })
+
     const handleClick = () => {
-        const giftElement = document.querySelector('.gift')
+        const giftElement = document.getElementById(id.value)
         if (giftElement) {
-            giftElement.classList.add('shake')
-            setTimeout(() => {
-                giftElement.classList.remove('shake')
-                showContent.value = !showContent.value
-                isFlipping.value = true
-                setTimeout(() => {
-                    isFlipping.value = false
-                }, 500)
-                if (showContent.value) props.togglePlay()
-            }, 500) // Duration of the shake animation
+            if (!showContent.value) giftElement.classList.add('shake')
+            setTimeout(
+                () => {
+                    if (!showContent.value) giftElement.classList.remove('shake')
+                    showContent.value = !showContent.value
+                    isFlipping.value = true
+                    setTimeout(() => {
+                        isFlipping.value = false
+                    }, 500)
+                    if (showContent.value) props.togglePlay()
+                },
+                showContent.value ? 0 : 500
+            )
         }
     }
 
