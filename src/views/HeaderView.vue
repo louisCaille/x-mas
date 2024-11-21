@@ -30,10 +30,10 @@
 
     .star-container {
         position: absolute;
-        top: -10px;
+        top: -20px;
         left: 50%;
         transform: translateX(-50%);
-        width: 70px;
+        width: 80px;
         height: auto;
     }
 
@@ -46,7 +46,7 @@
         top: 54%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 30px;
+        width: 35px;
     }
 
     .louis {
