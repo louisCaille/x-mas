@@ -43,8 +43,8 @@
                     <div class="frame-text">
                         <span>{{ text }}</span>
                     </div>
-                    <div v-if="link" class="link-bubble" @click.stop="openLink">
-                        <img src="@/assets/img/christmas-link.png" alt="link icon" />
+                    <div v-if="link" class="christmas-ball" @click.stop="openLink">
+                        <img src="@/assets/img/link.svg" alt="link icon" />
                     </div>
                 </div>
             </div>
@@ -218,35 +218,51 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        span {
-            color: #fbfbf4;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            display: -webkit-box;
-            line-clamp: 2;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
     }
 
-    .link-bubble {
+    .frame-text span {
+        color: #fbfbf4;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .christmas-ball {
         position: absolute;
         top: -20px;
         right: -20px;
         width: 30px;
         height: 30px;
         cursor: pointer;
-        background-color: #ffffff;
+        background-color: #ea0d0d;
         border-radius: 50%;
         padding: 5px;
-        border: 2px solid #000;
+        border: 2px solid #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: swing 2s infinite;
     }
 
-    .link-bubble img {
+    .christmas-ball img {
         width: 100%;
         height: 100%;
+        transform: rotate(-45deg);
+    }
+
+    @keyframes swing {
+        0% {
+            transform: rotate(-15deg);
+        }
+        50% {
+            transform: rotate(15deg);
+        }
+        100% {
+            transform: rotate(-15deg);
+        }
     }
 </style>
