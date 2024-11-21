@@ -5,6 +5,12 @@
 <template>
     <div class="header">
         <div class="image-container">
+            <div class="star-container">
+                <img class="star" src="@/assets/img/star.svg" alt="star" />
+                <div class="louis-container">
+                    <img class="louis" src="@/assets/img/louis.png" alt="louis" />
+                </div>
+            </div>
             <img class="dog" src="@/assets/img/vicky.png" alt="dog" />
             <img class="christmas-tree" src="@/assets/img/christmas-tree.svg" alt="christmas tree" />
             <NeonText class="text" text="MA LISTE DE NOËL" />
@@ -20,6 +26,44 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
+    }
+
+    .star-container {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: auto;
+    }
+
+    .star {
+        width: 100%;
+    }
+
+    .louis-container {
+        position: absolute;
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+    }
+
+    .louis {
+        width: 100%;
+        animation: swing 2s infinite;
+    }
+
+    @keyframes swing {
+        0% {
+            transform: rotate(-15deg);
+        }
+        50% {
+            transform: rotate(15deg);
+        }
+        100% {
+            transform: rotate(-15deg);
+        }
     }
 
     .dog {

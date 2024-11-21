@@ -192,13 +192,15 @@
     }
 
     .frame {
-        background-color: #fbfbf4;
+        background-color: #f4e4d8;
+        border: 10px solid #8b5e3b;
+        border-bottom: 50px solid #8b5e3b;
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
         position: relative;
         width: 100%;
         height: 100%;
         padding: 10px;
-        border: 10px solid #d4af37;
-        border-bottom: 50px solid #d4af37;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -221,7 +223,7 @@
     }
 
     .frame-text span {
-        color: #fbfbf4;
+        color: #ffffff;
         font-size: 14px;
         font-weight: bold;
         text-align: center;
