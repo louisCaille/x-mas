@@ -8,6 +8,7 @@
 
 <style scoped>
     .footer {
+        color: #ffffff;
         padding-top: 20px;
         text-align: center;
     }
