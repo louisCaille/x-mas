@@ -1,7 +1,5 @@
 <!-- NeonText.vue -->
 <script setup lang="ts">
-    import { defineProps } from 'vue'
-
     const props = defineProps<{ text: string }>()
 
     const getCharIndexWithoutSpaces = (index: number) => {

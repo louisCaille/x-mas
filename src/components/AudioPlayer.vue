@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-    import { defineExpose, onBeforeUnmount, onMounted, ref } from 'vue'
+    import { onBeforeUnmount, onMounted, ref } from 'vue'
 
     const audioSrc = new URL('@/assets/all-i-want-for-christmas-is-you.mp3', import.meta.url).href
     const audio = ref<HTMLAudioElement | null>(null)

@@ -23,5 +23,12 @@ export default defineConfig({
     base: publicPath(),
     build: {
         outDir: process.env.CI_PAGES_URL ? 'public' : 'dist'
+    },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                quietDeps: true
+            }
+        }
     }
 })
