@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import { ref } from 'vue'
+
+    const year = ref('')
+
+    const urlParams = new URLSearchParams(window.location.search)
+    year.value = urlParams.get('year') || '2024'
+</script>
 
 <template>
     <footer class="footer">
-        <div>© 2024 - Made with ❤️ by Louis</div>
+        <div>© {{ year }} - Made with ❤️ by Louis</div>
     </footer>
 </template>
 
