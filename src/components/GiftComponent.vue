@@ -18,22 +18,22 @@
             @click="handleClick"
         >
             <div
-                v-if="!showContent && pattern === 'cross-ribbon'"
+                v-if="!showContent && pattern === Pattern.CROSS_RIBBON"
                 class="cross-ribbon"
                 :style="{ backgroundColor: bandColor }"
             />
             <div
-                v-if="!showContent && pattern === 'polka-dots'"
+                v-if="!showContent && pattern === Pattern.POLKA_DOTS"
                 class="polka-dots"
                 :style="{ '--dot-color': bandColor }"
             />
             <div
-                v-if="!showContent && pattern === 'diagonal-ribbons'"
+                v-if="!showContent && pattern === Pattern.DIAGONAL_RIBBONS"
                 class="diagonal-ribbons"
                 :style="{ '--band-color': bandColor }"
             />
             <div
-                v-if="!showContent && pattern === 'diagonal-ribbons-reversed'"
+                v-if="!showContent && pattern === Pattern.DIAGONAL_RIBBONS_REVERSED"
                 class="diagonal-ribbons-reversed"
                 :style="{ '--band-color': bandColor }"
             />
@@ -53,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+    import { Pattern } from '@/enums/patterns.ts'
     import { onMounted, ref } from 'vue'
 
     const props = withDefaults(
@@ -66,13 +67,13 @@
             link?: string
             backGroundColor?: string
             bandColor?: string
-            pattern?: 'cross-ribbon' | 'polka-dots' | 'diagonal-ribbons' | 'diagonal-ribbons-reversed'
+            pattern?: Pattern
             togglePlay: () => void
         }>(),
         {
             backGroundColor: 'red',
             bandColor: 'yellow',
-            pattern: 'cross-ribbon'
+            pattern: Pattern.CROSS_RIBBON
         }
     )
 

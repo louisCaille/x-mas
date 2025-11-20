@@ -1,3 +1,5 @@
+import type { Pattern } from '@/enums/patterns.ts'
+
 export interface Gift {
     columnStart: number
     columnEnd: number
@@ -8,5 +10,5 @@ export interface Gift {
     link?: string
     backGroundColor?: string
     bandColor?: string
-    pattern?: 'cross-ribbon' | 'polka-dots' | 'diagonal-ribbons' | 'diagonal-ribbons-reversed'
+    pattern?: Pattern
 }
